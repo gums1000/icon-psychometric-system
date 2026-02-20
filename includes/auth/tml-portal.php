@@ -1,11 +1,5 @@
-<?php
-if ( ! defined( 'ABSPATH' ) ) { exit; }
-
-/**
- * TML Branded Auth Pages (Icon) — WORKING SAFE VERSION
- *
- * Goals:
- * - Keep your branded pages for login/register/lostpassword request
+require_once dirname( __DIR__ ) . '/helpers/auth-url-helpers.php';
+
  * - Ensure password reset (rp/resetpass) ALWAYS happens on wp-login.php
  * - Avoid memory exhaustion / recursion (NO site_url/network_site_url filters)
  *
