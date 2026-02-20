@@ -60,7 +60,8 @@ if ( ! function_exists( 'icon_psy_require_if_exists' ) ) {
 		}
 		return false;
 	}
-}
+		icon_psy_require_if_exists( ICON_PSY_PLUGIN_DIR . 'includes/helpers/auth-url-helpers.php' );
+
 
 // If already logged in and they hit the login page, bounce them out
 add_action( 'template_redirect', function () {

@@ -1,22 +1,12 @@
-<?php
-if ( ! defined( 'ABSPATH' ) ) { exit; }
-
-/**
- * Auth helper file (NO redirects)
- * Single source of truth for Icon auth/portal URLs.
- */
-
-if ( ! function_exists( 'icon_psy_portal_url' ) ) {
-    function icon_psy_portal_url() {
-        return home_url( '/catalyst-portal/' );
-    }
-}
-
-if ( ! function_exists( 'icon_psy_login_url' ) ) {
-    function icon_psy_login_url() {
-        return home_url( '/portal-login/' );
-    }
-}
+<?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+/**
+ * Auth helper file (NO redirects)
+ * Single source of truth for Icon auth/portal URLs.
+ */
+require_once dirname( __DIR__ ) . '/helpers/auth-url-helpers.php';
+
 
 if ( ! function_exists( 'icon_psy_register_url' ) ) {
     function icon_psy_register_url() {
