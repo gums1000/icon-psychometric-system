@@ -225,31 +225,9 @@ if ( ! function_exists( 'icon_psy_load_files' ) ) {
 
 		// ICON Profiler report
 		$path = ICON_PSY_PLUGIN_DIR . 'includes/shortcodes/icon-profiler-report.php';
-		if ( ICON_PSY_DEBUG ) {
-			error_log( 'ICON Profiler include path: ' . $path );
-		}
-		$ok = icon_psy_require_if_exists( $path );
-		if ( ICON_PSY_DEBUG ) {
-			error_log( 'ICON include profiler-report: ' . ( $ok ? 'OK' : 'MISSING' ) );
-			error_log( 'ICON Profiler include exists? ' . ( file_exists( $path ) ? 'YES' : 'NO' ) );
-			error_log( 'ICON Profiler dir listing (shortcodes): ' . print_r( @scandir( ICON_PSY_PLUGIN_DIR . 'includes/shortcodes/' ), true ) );
-		}
-
-		// Woo → credits (ONLY ONE FILE)
-		icon_psy_require_if_exists( ICON_PSY_PLUGIN_DIR . 'includes/integrations/woocommerce-credits.php' );
-
-		// Helpers bundle (credits, db, security, email, rules etc.)
-		icon_psy_require_if_exists( ICON_PSY_PLUGIN_DIR . 'includes/helpers/load.php' );
-	}
-}
-add_action( 'plugins_loaded', 'icon_psy_load_files', 1 );
-
-// -----------------------------------------------------------------------------
-// 4) BOOTSTRAP (init ONCE)
-// -----------------------------------------------------------------------------
-if ( class_exists( 'Icon_PSY_Activator' ) ) {
-	register_activation_hook( __FILE__, array( 'Icon_PSY_Activator', 'activate' ) );
-}
+		if ( ICON_PSY_DEBUG ) {// -----------------------------------------------------------------------------
+// X) HIDE SITE MENUS/HEADER/FOOTER ON ICON PAGES (portal + reports)
+// -----------------------------------------------------------------------------
 
 /**
  * ✅ Ensure branding table exists on plugin activation.
